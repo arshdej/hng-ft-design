@@ -143,25 +143,25 @@ function HeroSection() {
     <Box
       w="100%"
       backgroundImage={`url(hng-hero.png)`}
-      height={["20rem", "30rem"]}
+      height={{ base: "26rem", xs: "20rem", md: "24rem", lg: "28rem" }}
       backgroundSize="cover"
       backgroundPosition="center"
     >
       <HStack alignItems="center" py="3rem" w="100%" color="#fff">
-        <Center w="100%" mt="2rem">
+        <Center w="100%" mt={{ base: "1rem", sm: "2rem" }}>
           <Box maxW="30rem" textAlign="center">
-            <VStack gap={0} mb="2rem">
-              <Text fontWeight={700} fontSize={["xl", "2xl"]}>
+            <VStack gap={0} mb={{ base: "1rem", sm: "2rem" }}>
+              <Text fontWeight={700} fontSize={["md", "xl", "2xl"]}>
                 ELEVATE YOUR STYLE WITH
               </Text>
-              <Text fontWeight={700} fontSize={["xl", "2xl"]}>
+              <Text fontWeight={700} fontSize={["md", "xl", "2xl"]}>
                 OUR COLLECTIONS
               </Text>
-              <Text fontWeight={700} fontSize={["xl", "2xl"]}>
+              <Text fontWeight={700} fontSize={["md", "xl", "2xl"]}>
                 FOR THE MODERN MAN
               </Text>
             </VStack>
-            <Text mb="2rem">
+            <Text mb={{ base: "1rem", sm: "2rem" }}>
               Lets get you started with our amazing collections. Explore new
               styles, trends and experience tailored for the modern man.
             </Text>

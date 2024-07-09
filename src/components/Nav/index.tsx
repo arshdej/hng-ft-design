@@ -1,4 +1,5 @@
 import { useRootContext } from "@/context/root";
+import useWindowSize from "@/hooks/useWindowSize";
 import { Badge, Box, HStack } from "@chakra-ui/react";
 import { useRouter } from "next/dist/client/router";
 import Icon from "../Icon/Icon";
@@ -16,6 +17,7 @@ function Nav({ mode }: { mode: "lite" | "full" }) {
   };
 
   const itemCount = cartState.length || 0;
+  const ww = useWindowSize();
 
   return (
     <div>
@@ -30,12 +32,14 @@ function Nav({ mode }: { mode: "lite" | "full" }) {
           h="100%"
         >
           <HStack cursor={"pointer"} onClick={() => router.push("/")}>
-            <Box fontSize={"lg"} fontWeight={600} color="#fff">
+            <Box fontSize={["md", "lg"]} fontWeight={[400, 600]} color="#fff">
               ShopMen
             </Box>
-            <Box fontSize={"md"} fontWeight={400} color="#fff">
-              - Timbu Cloud Shop
-            </Box>
+            {ww?.width && ww?.width > 600 && (
+              <Box fontSize={"md"} fontWeight={400} color="#fff">
+                - Timbu Cloud Shop
+              </Box>
+            )}
           </HStack>
           {mode === "full" && (
             <HStack gap={8}>
